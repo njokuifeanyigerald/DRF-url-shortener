@@ -17,7 +17,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'http://127.0.0.1:8000']
+ALLOWED_HOSTS = ['https://bopl.herokuapp.com/', 'http://127.0.0.1:8000']
 
 
 # Application definition
@@ -139,4 +139,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
 
-HOST_URL = 'http://127.0.0.1:8000'
+# HOST_URL = 'http://127.0.0.1:8000'
+HOST_URL = 'https://bopl.herokuapp.com'

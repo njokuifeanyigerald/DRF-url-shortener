@@ -10,11 +10,15 @@ class ShortAPIView(ListAPIView):
     queryset = LinkModel.objects.all().order_by('-date_created')
     serializer_class = LinkSerializer
 
-class ShortCreateSAPIView(CreateAPIView):
+class ShortCreateAPIView(CreateAPIView):
     serializer_class = LinkSerializer
 
 class RedirectView(View):
     def get(self, request, short_link, *args,**kwargs):
-        short_link = settings.HOST_URL+'/'+self.kwargs['short_link']
+        # 2 ways
+        link = self.kwargs['short_link']
+        # slug = request.query_params.get('slug')
+
+        short_link = settings.HOST_URL+'/'+link
         redirect_link = LinkModel.objects.filter(short_link=short_link).first().original_link
         return redirect(redirect_link)

@@ -5,6 +5,8 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+from app.views import RedirectView
+
 schema_view = get_schema_view(
    openapi.Info(
       title="URL SHORTENER API",
@@ -27,4 +29,6 @@ urlpatterns = [
     path('swagger.json/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+
+    path('<str:short_link>/', RedirectView.as_view(), name='redirect')
 ]
