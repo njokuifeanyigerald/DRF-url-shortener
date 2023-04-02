@@ -9,6 +9,9 @@ class LinkModel(models.Model):
     short_link = models.URLField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.original_link
+
     def shortener(self):
         while True:
             random_string = ''.join(choices(ascii_letters, k=6))

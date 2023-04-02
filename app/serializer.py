@@ -5,5 +5,5 @@ class LinkSerializer(serializers.ModelSerializer):
     class Meta:
         model = LinkModel
         fields= [
-            'original_link','short_link'
+            'original_link'
         ]
