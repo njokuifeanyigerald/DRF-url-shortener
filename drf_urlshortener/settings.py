@@ -19,7 +19,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-HOST_URL = 'https:cg.onrender.com'
+HOST_URL = 'https://cg.onrender.com'
 
 # Application definition
 
