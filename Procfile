@@ -1,1 +1,1 @@
-web: gunicorn drf_urlshortener.wsgi
+gunicorn -w 4 drf_urlshortener.wsgi:application

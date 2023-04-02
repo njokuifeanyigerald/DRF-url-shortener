@@ -19,7 +19,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-HOST_URL = 'https://cg.onrender.com'
+HOST_URL = 'https://cg-1n8x.onrender.com'
 
 # Application definition
 
@@ -176,7 +176,7 @@ if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-    
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
